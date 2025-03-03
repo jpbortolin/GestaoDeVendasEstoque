@@ -9,4 +9,5 @@ public interface CrudRepositorio<T> {
     public List<T> buscarTodos();
     public Optional<T> buscarPeloId(Long id);
     public boolean removerPeloId(Long id);
+    
 }
