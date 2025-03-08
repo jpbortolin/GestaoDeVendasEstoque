@@ -24,7 +24,7 @@ public class CampoDeTexto extends JTextField{
     public CampoDeTexto() {
         setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setBackground(new Color(0, 0, 0, 0));
-         setForeground(Color.decode("#1D1B86"));
+        setForeground(Color.decode("#1D1B86"));
         setFont(new Font("sansserif", 0, 13));
         setSelectionColor(new Color(75, 175, 152));
         this.cor = new Color(28, 181, 223, 80);
