@@ -20,7 +20,7 @@ import org.reflections.ReflectionUtils;
 
 public abstract class CrudRepositorioImpl<T> implements CrudRepositorio<T> {
 
-    private Conexao conexao;
+    Conexao conexao;
     private Class<T> t;
 
     public CrudRepositorioImpl(Class<T> t) {
@@ -105,7 +105,7 @@ public abstract class CrudRepositorioImpl<T> implements CrudRepositorio<T> {
         return lista;
     }
 
-    private T getT(ResultSet resultSet) {
+    public T getT(ResultSet resultSet) {
         try {
             T tNovo = t.newInstance();
             Method metodo = null;

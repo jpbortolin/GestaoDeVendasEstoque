@@ -20,14 +20,14 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="76" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="campoDeTexto1" max="32767" attributes="0"/>
-                      <Component id="campoDeSenha1" min="-2" pref="254" max="-2" attributes="0"/>
+                      <Component id="campoDeTextoEmail" max="32767" attributes="0"/>
+                      <Component id="campoDeSenha" min="-2" pref="254" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                  <Component id="botao1" min="-2" pref="145" max="-2" attributes="0"/>
+                  <Component id="botaoLogin" min="-2" pref="145" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -37,11 +37,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="campoDeTexto1" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoDeTextoEmail" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="campoDeSenha1" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoDeSenha" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="botao1" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="botaoLogin" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="30" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -108,7 +108,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="com.sellsync.gestaovenda.visao.componentes.CampoDeTexto" name="campoDeTexto1">
+        <Component class="com.sellsync.gestaovenda.visao.componentes.CampoDeTexto" name="campoDeTextoEmail">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
@@ -122,7 +122,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="com.sellsync.gestaovenda.visao.componentes.CampoDeSenha" name="campoDeSenha1">
+        <Component class="com.sellsync.gestaovenda.visao.componentes.CampoDeSenha" name="campoDeSenha">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
@@ -136,10 +136,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoDeSenha1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoDeSenhaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="com.sellsync.gestaovenda.visao.componentes.Botao" name="botao1">
+        <Component class="com.sellsync.gestaovenda.visao.componentes.Botao" name="botaoLogin">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="28" green="78" red="f6" type="rgb"/>

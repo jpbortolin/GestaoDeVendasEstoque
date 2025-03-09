@@ -21,12 +21,9 @@ public class PanelBoard extends javax.swing.JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D graphics2D = (Graphics2D) g;
-
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
         GradientPaint gradientPaint = new GradientPaint(0, 0, cor1, getWidth(), getHeight(), cor2);
         graphics2D.setPaint(gradientPaint);
-
         graphics2D.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
     }
 

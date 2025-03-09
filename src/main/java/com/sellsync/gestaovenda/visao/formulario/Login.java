@@ -1,20 +1,61 @@
 package com.sellsync.gestaovenda.visao.formulario;
 
+import com.sellsync.gestaovenda.controlador.LoginControlador;
+import com.sellsync.gestaovenda.visao.componentes.Botao;
+import com.sellsync.gestaovenda.visao.componentes.CampoDeSenha;
+import com.sellsync.gestaovenda.visao.componentes.CampoDeTexto;
+import com.sellsync.gestaovenda.visao.componentes.PanelCarregar;
+import com.sellsync.gestaovenda.visao.util.MensagemUtil;
 import java.awt.Color;
 import net.miginfocom.swing.MigLayout;
 
 public class Login extends javax.swing.JFrame {
 
     private MigLayout layout;
+    private PanelCarregar panelCarregar;
+    private MensagemUtil mensagemUtil;
+    private LoginControlador loginControlador;
 
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));
+        
+        loginControlador = new LoginControlador(this);
 
         layout = new MigLayout("fill, insets");
+        panelCarregar = new PanelCarregar();
+        
         background.setLayout(layout);
+        background.add(panelCarregar, "pos 0 0 100% 100%");
         background.add(panelBoard1, "pos 0 0 100% 100%");
+        
+        mensagemUtil = new MensagemUtil(background, layout);
+        evento();
+    }
+
+    private void evento() {
+        botaoLogin.addActionListener(loginControlador);
+    }
+
+    public MensagemUtil getMensagemUtil() {
+        return mensagemUtil;
+    }
+    
+    public PanelCarregar getPanelCarregar() {
+        return panelCarregar;
+    }
+    
+    public CampoDeSenha getCampoDeSenha() {
+        return campoDeSenha;
+    }
+    
+    public CampoDeTexto getCampoDeTextoEmail() {
+        return campoDeTextoEmail;
+    }
+
+    public Botao getBotaoLogin() {
+        return botaoLogin;
     }
 
     @SuppressWarnings("unchecked")
@@ -26,9 +67,9 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        campoDeTexto1 = new com.sellsync.gestaovenda.visao.componentes.CampoDeTexto();
-        campoDeSenha1 = new com.sellsync.gestaovenda.visao.componentes.CampoDeSenha();
-        botao1 = new com.sellsync.gestaovenda.visao.componentes.Botao();
+        campoDeTextoEmail = new com.sellsync.gestaovenda.visao.componentes.CampoDeTexto();
+        campoDeSenha = new com.sellsync.gestaovenda.visao.componentes.CampoDeSenha();
+        botaoLogin = new com.sellsync.gestaovenda.visao.componentes.Botao();
         background = new javax.swing.JLayeredPane();
 
         panelBoard1.setToolTipText("");
@@ -70,26 +111,26 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        campoDeTexto1.setForeground(new java.awt.Color(102, 102, 102));
-        campoDeTexto1.setCor(new java.awt.Color(255, 255, 255));
-        campoDeTexto1.setDicas("Email");
-        campoDeTexto1.setPrefixoIcon(new javax.swing.ImageIcon("C:\\Users\\João Bortolin\\Documents\\NetBeansProjects\\gestaovenda\\src\\main\\java\\com\\sellsync\\gestaovenda\\visao\\icon\\mail.png")); // NOI18N
+        campoDeTextoEmail.setForeground(new java.awt.Color(102, 102, 102));
+        campoDeTextoEmail.setCor(new java.awt.Color(255, 255, 255));
+        campoDeTextoEmail.setDicas("Email");
+        campoDeTextoEmail.setPrefixoIcon(new javax.swing.ImageIcon("C:\\Users\\João Bortolin\\Documents\\NetBeansProjects\\gestaovenda\\src\\main\\java\\com\\sellsync\\gestaovenda\\visao\\icon\\mail.png")); // NOI18N
 
-        campoDeSenha1.setForeground(new java.awt.Color(102, 102, 102));
-        campoDeSenha1.setCor(new java.awt.Color(255, 255, 255));
-        campoDeSenha1.setDicas("Senha");
-        campoDeSenha1.setPrefixoIcon(new javax.swing.ImageIcon("C:\\Users\\João Bortolin\\Documents\\NetBeansProjects\\gestaovenda\\src\\main\\java\\com\\sellsync\\gestaovenda\\visao\\icon\\pass.png")); // NOI18N
-        campoDeSenha1.addActionListener(new java.awt.event.ActionListener() {
+        campoDeSenha.setForeground(new java.awt.Color(102, 102, 102));
+        campoDeSenha.setCor(new java.awt.Color(255, 255, 255));
+        campoDeSenha.setDicas("Senha");
+        campoDeSenha.setPrefixoIcon(new javax.swing.ImageIcon("C:\\Users\\João Bortolin\\Documents\\NetBeansProjects\\gestaovenda\\src\\main\\java\\com\\sellsync\\gestaovenda\\visao\\icon\\pass.png")); // NOI18N
+        campoDeSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoDeSenha1ActionPerformed(evt);
+                campoDeSenhaActionPerformed(evt);
             }
         });
 
-        botao1.setBackground(new java.awt.Color(246, 120, 40));
-        botao1.setForeground(new java.awt.Color(0, 0, 0));
-        botao1.setIcon(new javax.swing.ImageIcon("C:\\Users\\João Bortolin\\Documents\\NetBeansProjects\\gestaovenda\\src\\main\\java\\com\\sellsync\\gestaovenda\\visao\\icon\\login.png")); // NOI18N
-        botao1.setText("LOGIN");
-        botao1.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        botaoLogin.setBackground(new java.awt.Color(246, 120, 40));
+        botaoLogin.setForeground(new java.awt.Color(0, 0, 0));
+        botaoLogin.setIcon(new javax.swing.ImageIcon("C:\\Users\\João Bortolin\\Documents\\NetBeansProjects\\gestaovenda\\src\\main\\java\\com\\sellsync\\gestaovenda\\visao\\icon\\login.png")); // NOI18N
+        botaoLogin.setText("LOGIN");
+        botaoLogin.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout panelBoard1Layout = new javax.swing.GroupLayout(panelBoard1);
         panelBoard1.setLayout(panelBoard1Layout);
@@ -99,12 +140,12 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBoard1Layout.createSequentialGroup()
                 .addContainerGap(76, Short.MAX_VALUE)
                 .addGroup(panelBoard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campoDeTexto1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(campoDeSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoDeTextoEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(campoDeSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(76, 76, 76))
             .addGroup(panelBoard1Layout.createSequentialGroup()
                 .addGap(135, 135, 135)
-                .addComponent(botao1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelBoard1Layout.setVerticalGroup(
@@ -112,11 +153,11 @@ public class Login extends javax.swing.JFrame {
             .addGroup(panelBoard1Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(campoDeTexto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(campoDeTextoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(campoDeSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(campoDeSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(botao1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 30, Short.MAX_VALUE))
         );
 
@@ -148,9 +189,9 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoDeSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDeSenha1ActionPerformed
+    private void campoDeSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDeSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoDeSenha1ActionPerformed
+    }//GEN-LAST:event_campoDeSenhaActionPerformed
 
     public static void main(String args[]) {
 
@@ -163,9 +204,9 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane background;
-    private com.sellsync.gestaovenda.visao.componentes.Botao botao1;
-    private com.sellsync.gestaovenda.visao.componentes.CampoDeSenha campoDeSenha1;
-    private com.sellsync.gestaovenda.visao.componentes.CampoDeTexto campoDeTexto1;
+    private com.sellsync.gestaovenda.visao.componentes.Botao botaoLogin;
+    private com.sellsync.gestaovenda.visao.componentes.CampoDeSenha campoDeSenha;
+    private com.sellsync.gestaovenda.visao.componentes.CampoDeTexto campoDeTextoEmail;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
